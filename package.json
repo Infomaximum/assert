@@ -1,6 +1,6 @@
 {
   "name": "@infomaximum/asserts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/Infomaximum/asserts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
