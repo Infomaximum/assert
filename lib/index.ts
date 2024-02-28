@@ -30,8 +30,7 @@ export function assertSilent(bSuccess: boolean, ...messages: string[]) {
   if (process.env.NODE_ENV !== "production") {
     if (!bSuccess) {
       const console = getConsole();
-      const result = { ...messages } || ["Unhandled exception"];
-      console.warn(result);
+      console.error(messages.join("\n"));
     }
   }
 }
@@ -50,8 +49,8 @@ export function assertComplex(assertionFunc: () => void) {
  */
 function getConsole() {
   const console =
-    typeof window.console !== "undefined"
-      ? window.console
+    typeof globalThis.console !== "undefined"
+      ? globalThis.console
       : {
           log() {},
           error() {},
